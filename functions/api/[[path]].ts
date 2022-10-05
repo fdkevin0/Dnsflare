@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+export async function onRequest(request) {
     const { origin, pathname, searchParams } = new URL(request.url);
     const param = searchParams.toString() ? "?" + searchParams.toString() : "";
     const requestHeaders = request.headers.get("Access-Control-Request-Headers");
@@ -38,7 +38,3 @@ async function handleRequest(request) {
     newResponse.headers.set("Content-Type", "application/json");
     return newResponse;
 }
-
-addEventListener('fetch', event => {
-    event.respondWith(handleRequest(event.request));
-})
