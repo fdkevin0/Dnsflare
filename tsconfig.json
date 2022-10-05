@@ -28,5 +28,6 @@
         "./src/**/*",
         "./postcss.config.js",
         "./builder/**/*"
-    ]
+    ],
+    "exclude": ["functions/**/*"]
 }
