@@ -21,7 +21,7 @@ export async function onRequest(context) {
     }
 
     // 处理正式请求
-    const newRequest = new Request("https://api.cloudflare.com" + pathname.replace('/api', '') + param, request);
+    const newRequest = new Request("https://api.cloudflare.com/client/v4" + pathname.replace('/api', '') + param, request);
     // 请求头删除来源
     newRequest.headers.set("referrer-policy", "no-referrer");
     newRequest.headers.delete("Referer");
