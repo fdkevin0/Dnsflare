@@ -1,4 +1,5 @@
-export async function onRequest(request) {
+export async function onRequest(context) {
+    const { request } = context;
     const { origin, pathname, searchParams } = new URL(request.url);
     const param = searchParams.toString() ? "?" + searchParams.toString() : "";
     const requestHeaders = request.headers.get("Access-Control-Request-Headers");
